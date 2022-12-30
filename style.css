@@ -1,0 +1,782 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+}
+
+header{
+    top: 1%; left: 1%;
+    position: absolute;
+}
+
+header img{
+    margin-left: 5px;
+    width: 60px;
+    position: absolute;
+    top: 10px;
+}
+
+
+header .cora{
+    margin-left: 5px;
+    width: 60px;
+    position: absolute;
+    top: 80px;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-image: url(img/fondo.png);
+    background-size: 100% 100%;
+}
+
+main{
+    display: flex;
+    width: 100%;
+    height: 95%;
+}
+
+/*********** INPUT SECTION ***********/
+.input-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+}
+
+.content-input{
+    width: 70%;
+    height: 70%;
+    padding: 20px;
+}
+
+/* text area */
+.wrap-text{
+
+    width: 100%;
+    height: 80%;
+}
+
+.wrap-text textarea{
+    width: 99%;
+    height: 97%;
+    outline: none;
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+    resize: none;
+    background-color: #4d924b;
+    color: rgb(218, 208, 191);
+}
+
+::placeholder { color: rgb(196, 179, 149); }
+
+/* botones */
+.button-wrap{
+    width: 100%;
+    height: 20%;
+}
+
+.button{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 70%;
+}
+
+.button button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.wrap-span{
+width: 100%;
+height: 30%;
+font-size: 8px;
+}
+
+/* boton de encriptar */
+
+.btnEncriptar{
+    background-color: #00c000;
+    border: none;
+    cursor: pointer;
+    font-size: 10px;
+
+}
+.btn8bitE{
+    background-color: #00c000;
+    width: 49%;
+    height: 30px;
+    float: left;
+    border-left: 10px solid #00c000;
+    border-right: 10px solid #006600;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    }
+     
+    .btn8bitE .wrapper-buttonE{
+    height: 100%;
+    display: block;
+    margin: -10px 0;
+    border-top: 10px solid #00c000;
+    border-bottom: 10px solid #006600;
+    }
+     
+    .btn8bitE::before,
+    .btn8bitE::after,
+    .btn8bitE .wrapper-buttonE::before,
+    .btn8bitE .wrapper-buttonE::after{
+    content: '';
+    width: 10px;
+    height: 10px;
+    display: block;
+    position: absolute;
+    background: #00c000;
+    }
+
+    .btn8bitE .wrapper-buttonE::after{
+        background:#006600;
+        }
+    .btn8bitE::before{ top: -5px; left: -5px; }
+    .btn8bitE::after{ top: -5px; right: -5px; }
+    .btn8bitE .wrapper-buttonE::before{ bottom: -5px; left: -5px; }
+    .btn8bitE .wrapper-buttonE::after{ bottom: -5px; right: -5px; }
+
+
+/* boton dedesencripar */
+.btnDesencriptar{
+    width: 100%;
+    height: 100%;
+    background-color: #f8cd04;
+    border: none;
+    cursor: pointer;
+    font-size: 10px;
+}
+
+.btn8bitD{
+    background-color: #f8cd04;
+    width: 49%;
+    float: left;
+    border-left: 10px solid #f8cd04;
+    border-right: 10px solid #997f0d;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    }
+     
+    .btn8bitD .wrapper-buttonD{
+    height: 30px;
+    display: block;
+    margin: -10px 0;
+    border-top: 10px solid #f8cd04;
+    border-bottom: 10px solid #997f0d;
+    }
+     
+    .btn8bitD::before,
+    .btn8bitD::after,
+    .btn8bitD .wrapper-buttonD::before,
+    .btn8bitD .wrapper-buttonD::after{
+    content: '';
+    width: 10px;
+    height: 10px;
+    display: block;
+    position: absolute;
+    background: #f8cd04;
+    }
+
+    .btn8bitD .wrapper-buttonD::after{
+        background: #997f0d;
+        }
+    .btn8bitD::before{ top: -5px; left: -5px; }
+    .btn8bitD::after{ top: -5px; right: -5px; }
+    .btn8bitD .wrapper-buttonD::before{ bottom: -5px; left: -5px; }
+    .btn8bitD .wrapper-buttonD::after{ bottom: -5px; right: -5px; }
+
+/*************************************/
+
+
+/*********** TEXT VIEW SECTION ***********/
+.view-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 98%;
+}
+
+.content-viewT{
+    width: 90%;
+    height: 90%;
+    background-color: blue;
+    }
+
+    .section_8bit{
+        float: left;
+        border-left: 10px solid #66331e;
+        border-right: 10px solid #411d0d;
+        position: relative;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        }
+         
+        .section_8bit .wrapper{
+            height: 100%;
+        display: block;
+        margin: -10px 0;
+        border-top: 10px solid #66331e;
+        border-bottom: 10px solid #411d0d;
+        }
+         
+        .section_8bit::before,
+        .section_8bit::after,
+        .section_8bit .wrapper::before,
+        .section_8bit .wrapper::after{
+        content: '';
+        width: 10px;
+        height: 10px;
+        display: block;
+        position: absolute;
+        background:#66331e;
+        }
+
+        .section_8bit .wrapper::after{
+            background:#411d0d;
+            }
+        .section_8bit::before{ top: -5px; left: -5px; }
+        .section_8bit::after{ top: -5px; right: -5px; }
+        .section_8bit .wrapper::before{ bottom: -5px; left: -5px; }
+        .section_8bit .wrapper::after{ bottom: -5px; right: -5px; }
+.wrap-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    }
+
+    .wrap-image img{
+        min-width: 50%;
+
+    }
+
+    .wrap-textView{
+        text-align: center;
+        width: 100%;
+        height: 50%;
+        }
+
+        .wrap-textView h2{
+            margin-top: 20%;
+            font-size: 20px;
+        }
+
+        .wrap-textView p{
+            margin-top: 10%;
+            font-size: 13px;
+        }
+
+.view-text img{
+        width: 20%;
+    }
+
+
+    /* TEXT AREA AND BUTTON MESSAGE ENCRIPTED */
+
+    .content-view2{
+        display: none;
+        width: 90%;
+        height: 90%;
+        background-color: blue;
+        }
+
+    .wrap-textA{
+        width: 100%;
+        height: 80%
+    }
+
+    .wrap-textA textarea{
+        width: 92%;
+        height: 95%;
+        padding: 10px;
+        background-color: blue;
+    outline: none;
+    border: none;
+    resize: none;
+    }
+
+    .wrap-btnCopy{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 20%;
+
+    }
+
+    .wrap-btnCopy button{
+        width: 100%;
+        height: 100%;
+        background-color: #cc9f49;
+        border: none;
+        cursor: pointer;
+    }
+
+    .btn8bit-copy{
+        background-color: #cc9f49;
+        width: 80%;
+        height: 40%;
+        float: left;
+        border-left: 10px solid #cc9f49;
+        border-right: 10px solid #755924;
+        position: relative;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        }
+         
+        .btn8bit-copy .wrap-btncopy{
+        display: block;
+        height: 100%;
+        margin: -10px -1px;
+        border-top: 10px solid #cc9f49;
+        border-bottom: 10px solid #755924;
+        }
+         
+        .btn8bit-copy::before,
+        .btn8bit-copy::after,
+        .btn8bit-copy .wrap-btncopy::before,
+        .btn8bit-copy .wrap-btncopy::after{
+        content: '';
+        width: 10px;
+        height: 10px;
+        display: block;
+        position: absolute;
+        background: #cc9f49;
+        }
+
+        .btn8bit-copy .wrap-btncopy::after{
+            background: #755924;
+            }
+        .btn8bit-copy::before{ top: -5px; left: -5px; }
+        .btn8bit-copy::after{ top: -5px; right: -5px; }
+        .btn8bit-copy .wrap-btncopy::before{ bottom: -5px; left: -5px; }
+        .btn8bit-copy .wrap-btncopy::after{ bottom: -5px; right: -5px; }
+
+/*************************************/
+
+
+/*********** FOOTER ***********/
+
+footer{
+    font-family: 'Press Start 2P', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 5%;
+    background-color: #db7437;
+    font-size: 12px;
+}
+
+footer a{
+    margin-left: 10px;
+    font-size: 20px;
+    color: black;
+}
+
+.fa-linkedin{
+   color: #0a67c3; 
+}
+
+
+/*************************************/
+
+
+
+/*********** ALERT ERROR ***********/
+
+
+.alert-wrap{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+     display: none; 
+}
+
+.error-color{
+    position: absolute;
+    background-color: #4320576c;
+    width: 100%;
+    height: 100%;
+}
+
+.alert-error{
+    position: absolute;
+    text-align: center;
+    background-color: #0b66c3;
+    width: 40%;
+    float: left;
+    border-left: 10px solid #241c01;
+    border-right: 10px solid #241c01;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    top: 20%; left: 30%;
+    }
+
+    .alert-error img{
+        width: 40%;
+        margin-bottom: 20px;
+    }
+     
+    .alert-error h2{
+        margin-bottom: 20px;
+    }
+
+    .alert-error p{
+        margin-bottom: 20px;
+    }
+
+    .btn-alert{
+        padding: 5px;
+        border: solid 2px black;
+        cursor: pointer;
+    }
+
+    .alert-error .wrapper-alert{
+    display: block;
+    color: #87a2b4;
+    text-shadow: black 2px 2px;
+    padding: 40px;
+    margin: -10px 0;
+    border-top: 10px solid #241c01;
+    border-bottom: 10px solid #241c01;
+    }
+     
+    .alert-error::before,
+    .alert-error::after,
+    .alert-error .wrapper-alert::before,
+    .alert-error .wrapper-alert::after{
+    content: '';
+    width: 10px;
+    height: 10px;
+    display: block;
+    position: absolute;
+    background: #241c01;
+    }
+    .alert-error::before{ top: -5px; left: -5px; }
+    .alert-error::after{ top: -5px; right: -5px; }
+    .alert-error .wrapper-alert::before{ bottom: -5px; left: -5px; }
+    .alert-error .wrapper-alert::after{ bottom: -5px; right: -5px; }
+
+
+/*************************************/
+
+
+/*********** BUTTON DELETE TEXT ***********/
+     .btn-Borrar{
+        display: none;
+        position: absolute;
+        background-color: transparent;
+        border: none;
+        padding: 5px;
+        top: 15%; left: 55%;
+        cursor: pointer;
+        border: none;
+    }
+
+    .btn-Borrar img{
+        width: 30px;
+    }
+
+/*************************************/
+
+/*********** ALERT COPY AND NO TEXT***********/
+
+/* alert copy */
+.alert-copy{
+    position: absolute;
+    top: 5%; left: 85%;
+    width: 200px;
+    height: 150px;
+    display: none;
+    }
+    
+    .alert-copy img{
+        width: 80%;
+    }
+    
+    .alert-copy p{
+        color: black;
+        font-weight: bold;
+        font-size: 20px;
+        text-shadow: white 3px 1px;
+    }
+
+    /* alert no text */
+
+    .alert-text{
+        display: none;
+        background-color: #f24337;
+        position: absolute;
+        top: 40%; left: 2%;
+        width: 250px;
+        height: 36px;
+        float: left;
+        border-left: 10px solid #f24337;
+        border-right: 10px solid #f24337;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        }
+         
+        .alert-text .wrapper-alertT{
+            background-color: #f24337;
+        display: block;
+        color: #ffffff;
+        padding: 10px;
+        margin: -10px 0;
+        border-top: 10px solid #f24337;
+        border-bottom: 10px solid #f24337;
+        }
+         
+        .alert-text::before,
+        .alert-text::after,
+        .alert-text .wrapper-alertT::before,
+        .alert-text .wrapper-alertT::after{
+        content: '';
+        width: 10px;
+        height: 10px;
+        display: block;
+        position: absolute;
+        background: #f24337;
+        }
+        .alert-text::before{ top: -5px; left: -5px; }
+        .alert-text::after{ top: -5px; right: -5px; }
+        .alert-text .wrapper-alertT::before{ bottom: -5px; left: -5px; }
+        .alert-text .wrapper-alertT::after{ bottom: -5px; right: -5px; }
+    
+/*************************************/
+
+
+/*********** RESPONSIVE TABLET ***********/
+
+
+@media screen and (max-width: 950px) {
+
+    header{
+        width: 100%;
+        top: 0%; left: 0%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    header img{
+        width: 60px;
+        position: relative;
+        top: 0;
+    }
+    
+    
+    header .cora{
+        margin-left: 5px;
+        width: 60px;
+        height: 15px;
+        position: relative;
+        top: 0;
+    }
+
+    
+    main {
+        flex-direction: column;
+        align-items: center;
+        align-items: stretch;
+      }
+
+      body{
+        background-image: none;
+        background-color: #4d924b;
+      }
+
+      /* input section */
+      .input-section{
+        width: auto;
+        height: 70%;
+      }
+
+      .content-input{
+        width: 100%;
+      }
+
+      .btn8bitE .wrapper-buttonE{
+        margin: -9px -1px;
+        }
+
+        .btn8bitD .wrapper-buttonD{
+            margin: -9px -1px;
+            }
+
+      /* view-text section */
+
+      .view-text{
+        width: auto;
+        height: 30%;
+      }
+
+      .wrap-image{
+        display: none;
+      }
+
+      .wrap-textView{
+        height: 100%;
+      }
+
+      .wrap-textView h2{
+        margin: 5%;
+      }
+
+      .btn8bit-copy .wrap-btncopy{
+        margin: -9px -1px;
+        }
+
+      footer a{
+        margin-left: 0px;
+      }
+
+
+      /* alert error */
+    
+.alert-error{
+    width: 90%;
+    top: 30%; left: 5%;
+    }
+
+    /* alert copy */
+    .alert-copy{
+        position: absolute;
+        top: 70%; left: 60%;
+        width: 200px;
+        height: 150px;
+        display: none;
+        }
+
+        /* alert no text */
+
+        .alert-text .wrapper-alertT{
+        margin: -12px -1px;
+        }
+    
+
+        /* button delete text */
+        .btn-Borrar{
+            left: 80%;
+        }
+}
+
+
+/*************************************/
+
+
+
+
+/*********** RESPONSIVE MOVIL ***********/
+
+
+@media screen and (max-width: 500px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+        align-items: stretch;
+      }
+
+      /* input section */
+      .input-section{
+        width: auto;
+        height: 70%;
+      }
+
+      .wrap-text{
+        height: 60%;
+      }
+
+      .button-wrap{
+        height: 40%;
+      }
+
+      .button{
+        display: block;
+      }
+
+      .btn8bitE{
+        margin-top: 5%;
+        width: 100%;
+      }
+
+      .btn8bitD{
+        margin-top: 50px;
+        width: 100%;
+      }
+
+      .btn8bitE .wrapper-buttonE{
+        margin: -9px -1px;
+        }
+
+        .btn8bitD .wrapper-buttonD{
+            margin: -9px -1px;
+            }
+         
+      
+
+      /* view-text section */
+
+      .view-text{
+        width: auto;
+        height: 30%;
+      }
+
+      .wrap-image{
+        display: none;
+      }
+
+      .wrap-textView{
+        height: 100%;
+      }
+
+      .wrap-textView h2{
+        margin: 5%;
+      }
+
+      .btn8bit-copy .wrap-btncopy{
+        margin: -9px -1px;
+        }
+
+        /* alert no text */
+        .alert-text{
+            top: 25%; left: 2%;
+            }
+
+            .alert-text .wrapper-alertT{
+                margin: -9px -1px;
+                }
+
+                 /* button delete text */
+        .btn-Borrar{
+            left: 90%;
+        }
+             
+}
+
+/*************************************/

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/zlogo.gif">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- STYLE -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Encriptador</title>
+
+</head>
+
+<body>
+
+    <main>
+
+        <header>
+            <img src="img/zlogo.gif" alt="">
+            <img class="cora" src="img/corazon.png" alt="">
+        </header>
+
+
+
+        <section class="input-section">
+
+            <div class="content-input">
+
+                    <!-- TEXT AREA -->
+            <div class="wrap-text">
+                <textarea class="text-en" id="text-en" rows="10" placeholder="Ingrese el texto aquí"></textarea>
+            </div>
+
+            <div class="button-wrap">
+
+                <div class="wrap-span">
+                    <span><i class="fa-solid fa-circle-exclamation"></i>Solo letras minúsculas y sin acentos</span>
+                </div>
+
+
+                <!-- BOTONES ENCRIPTAR Y DESENCRIPTAR -->
+                <div class="button">
+
+                    <!-- BOTON DE ENCRIPTAR -->
+                    <div class="btn8bitE">
+                        <div class="wrapper-buttonE">
+                            <button class="btnEncriptar" id="btnEncriptar">Encriptar</button>
+                       </div>
+                    </div>
+
+                    <div class="btn8bitD">
+                        <div class="wrapper-buttonD">
+                    <button class="btnDesencriptar" id="btnDesencriptar" >Desencriptar</button>
+                </div>
+            </div>
+
+
+                </div>
+            </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- SECTION TEXT -->
+        <section class="view-text">
+
+
+            <div class="content-viewT section_8bit" id="content-viewT">
+
+                <div class="wrapper">
+                <!-- IMAGE TEXT VIEW -->
+                <div class="wrap-image">
+                    <img src="img/escudo.gif" alt="">
+                </div>
+    
+                <!-- TEXT -->
+                <div class="wrap-textView">
+                    <h2>Ningún mensaje encontrado</h2>
+                    <p>Ingresa el texto que desees encriptar o desencriptar</p>
+                </div>
+            </div>
+
+        </div>
+
+                <div class="content-view2 section_8bit" id="content-view2">
+                    <div class="wrapper">
+                <!-- IMAGE TEXT VIEW -->
+                <div class="wrap-textA">
+                    <textarea class="text-right" id="text-right" cols="0" rows="0" readonly></textarea>
+                </div>
+    
+                <!-- TEXT -->
+                <div class="wrap-btnCopy">
+                    <div class="btn8bit-copy">
+                    <div class="wrap-btncopy">
+                        <button class="btnCopiar" id="btnCopiar" >Copiar</button>
+                    </div>
+                    </div>
+                </div>
+
+    </div>
+</div>
+        </section>
+
+        <!-- BUTTON DELETE -->
+        <button class="btn-Borrar" id="btn-Borrar"><img src="img/tacha.png" alt=""></button>
+
+
+        <!------------------ ALERT --------------->
+                <!-- ALERT ERROR -->
+                <div class="alert-wrap" id="alert-wrap">
+                    <div class="error-color"> </div>
+                    <div class="alert-error" id="alert-error">
+                        <div class="wrapper-alert">
+                            <img src="img/pollo.gif" alt="">
+                            <h2>Error</h2>
+                            <p>Solo letras minúsculas y sin acentos</p>
+                            <button class="btn-alert" id="btn-alert">Aceptar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ALERT  COPY-->
+        <div class="alert-copy" id="alert-copy">
+            <img src="img/espada.png" alt="">
+            <p>Texto copiado!</p>
+        </div>
+
+                 <!-- ALERT NO TEXT-->
+                 <div class="alert-text" id="alert-text">
+                    <div class="wrapper-alertT">
+                    <p>Ingresa texto</p>
+                </div>
+            </div>
+          <!------------------ ALERT --------------->
+
+
+    </main>
+
+    <footer>
+        <p>Desarrollado por Francisco Figueroa</p>
+        <a href="https://github.com/JavierFig0/Encriptador-de-texto"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/francisco-javier-figueroa-flores-843b57250/"><i class="fa-brands fa-linkedin"></i></a>
+    </footer>
+
+
+    <script src="main.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+</body>
+
+</html>
