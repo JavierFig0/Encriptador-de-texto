@@ -1,7 +1,5 @@
 # Challenge ONE Principiante en Programación
 
-Primer challenge de ONE ORACLE, que consiste en crear una página web que sea capaz de encriptar y desencriptar texto que sea ingresado por el usuario y mostrar el texto en la pantalla, el objetivo de este proyecto es poner a prueba los conocimientos adquiridos durante el curso "Principiante en programación".
-
 ![](img/capturaEncriptador.png)
 
 :point_right: [Link del Proyecto](https://javierfig0.github.io/Encriptador-de-texto/) 
