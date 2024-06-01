@@ -5,17 +5,18 @@ const btnCopiar = document.getElementById("btnCopiar");
 const alerta = document.getElementById("btn-alert");
 const btnborra = document.getElementById("btn-Borrar");
 
-
 //FUNCION PARA CAMBIAR ENTRE LA IMAGEN Y EL TEXTAREA
-
-function mostrarImagen(){
-
+function mostrarImagen()
+{
     var inputText = document.getElementById("text-en").value;
 
-    if(inputText === ""){
+    if(inputText === "")
+    {
         document.getElementById("content-view2").style.display = "none";
         document.getElementById("content-viewT").style.display = "block";
-    } else {
+    } 
+    else 
+    {
         document.getElementById("content-viewT").style.display = "none";
         document.getElementById("content-view2").style.display = "block";
     }
@@ -24,7 +25,8 @@ function mostrarImagen(){
 //FUNCION PARA LIMPIAR LOS TEXT AREA
 btnborra.addEventListener("click", limpiar);
 btnborra.addEventListener("click", mostrarImagen);
-function limpiar() {
+function limpiar() 
+{
     document.getElementById("text-en").value = "";
     document.getElementById("text-right").value = "";
     document.getElementById("btn-Borrar").style.display = "none";
@@ -33,15 +35,17 @@ function limpiar() {
 
 // FUNCION DE ENCRIPTAR
 btnEncriptar.addEventListener("click", Encriptar);
-function Encriptar(){
-
+function Encriptar()
+{
     var Text = document.getElementById("text-en").value.trimStart();
 
-    if(Text === ""){
+    if(Text === "")
+    {
         document.getElementById("alert-text").style.display = "block";
       setTimeout(function() { $('.alert-text').fadeOut('fast'); }, 1000);
-    } else {
-
+    } 
+    else 
+    {
         document.getElementById("btn-Borrar").style.display = "block";
 
         Text = Text
@@ -53,23 +57,22 @@ function Encriptar(){
     
         document.getElementById("text-right").value = Text;
         mostrarImagen();
-
     }
-
-
 }
 
 // FUNCION DE DESENCRIPTAR
 btnDesencriptar.addEventListener("click", Desencriptar);
-function Desencriptar(){
+function Desencriptar()
+{
     var Text = document.getElementById("text-en").value.trimStart();
 
-    
-    if(Text === ""){
+    if(Text === "")
+    {
         document.getElementById("alert-text").style.display = "block";
       setTimeout(function() { $('.alert-text').fadeOut('fast'); }, 1000);
-    } else {
-
+    } 
+    else 
+    {
         document.getElementById("btn-Borrar").style.display = "block";
 
         Text = Text
@@ -81,38 +84,38 @@ function Desencriptar(){
     
         document.getElementById("text-right").value = Text;
         mostrarImagen();
-
     }
-
 }
 
 // BOTON DE COPIAR
 btnCopiar.addEventListener("click", copiar);
-function copiar() {
-      let copiar = document.getElementById("text-right").value;
-      navigator.clipboard.writeText(copiar);
+function copiar() 
+{
+    let copiar = document.getElementById("text-right").value;
+    navigator.clipboard.writeText(copiar);
 
-      document.getElementById("alert-copy").style.display = "block";
-      setTimeout(function() { $('.alert-copy').fadeOut('fast'); }, 1000);
-
+    document.getElementById("alert-copy").style.display = "block";
+    setTimeout(function() { $('.alert-copy').fadeOut('fast'); }, 1000);
 
 }  
 
 // DESAPARECER ALERTA DE ERROR
 alerta.addEventListener("click", alertError);
-function alertError(){
+function alertError()
+{
    document.getElementById("alert-wrap").style.display = "none";
 }
-
 
 // VALIDAR CARACTERES
 btnEncriptar.addEventListener("click", validar);
 btnDesencriptar.addEventListener("click", validar);
 const letras = /[A-Z~!@#$%^&*()_+|}{[\]\\\/?=><:"`;.,áéíóúàèìòù'1-9]/g;
 
-function validar() {
+function validar() 
+{
     let inputText = document.getElementById("text-en").value;
-    if (inputText.match(letras) != null) {
+    if (inputText.match(letras) != null) 
+    {
         document.getElementById("alert-wrap").style.display = "block";
         mostrarImagen();
         limpiar();
