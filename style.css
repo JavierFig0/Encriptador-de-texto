@@ -27,8 +27,10 @@ header .cora {
 body {
     width: 100%;
     height: 100vh;
-    background-image: url(img/fondo.png);
-    background-size: 100% 100%;
+    /* suelo del overworld de Zelda NES: baldosa que se repite sin deformarse */
+    background-color: #fcd8a8;
+    background-image: url(img/fondo-zelda.png);
+    background-repeat: repeat;
 }
 
 main {
@@ -53,20 +55,33 @@ main {
 }
 
 /* text area */
+/* el marco de .section_8bit sobresale 10px arriba y abajo, por eso el margen
+   y los 20px que se restan a la altura */
 .wrap-text {
     width: 100%;
-    height: 80%;
+    height: calc(80% - 20px);
+    margin: 10px 0;
+}
+
+/* .section_8bit trae float: left, que aquí movería los botones.
+   flow-root evita que el margen -10px del .wrapper se fusione con el margen
+   de .wrap-text (sin eso el marco baja 10px y tapa el aviso de abajo) */
+.wrap-text.section_8bit {
+    float: none;
+    display: flow-root;
 }
 
 .wrap-text textarea {
-    width: 99%;
-    height: 97%;
+    display: block;
+    width: 100%;
+    height: 100%;
     outline: none;
     border: none;
     padding: 10px;
-    font-size: 15px;
+    box-sizing: border-box;
+    font-size: 16px;
     resize: none;
-    background-color: #4d924b;
+    background-color: #005800;
     color: rgb(218, 208, 191);
 }
 
@@ -90,6 +105,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 10px;
     width: 100%;
     height: 100%;
 }
@@ -100,21 +116,27 @@ height: 30%;
 font-size: 8px;
 }
 
+/* color de la arena detrás del aviso, para que las rupias y el pasto
+   del fondo no tapen la letra pequeña */
+.wrap-span span {
+background-color: #fcd8a8;
+}
+
 /* boton de encriptar */
 
 .btnEncriptar {
     background-color: #00c000;
     border: none;
     cursor: pointer;
-    font-size: 10px;
+    font-size: 16px;
 
 }
 .btn8bitE {
     background-color: #00c000;
-    width: 49%;
+    width: 47%;
     height: 30px;
     float: left;
-    border-left: 10px solid #00c000;
+    border-left: 10px solid #58d854;
     border-right: 10px solid #006600;
     position: relative;
     -webkit-box-sizing: border-box;
@@ -126,7 +148,7 @@ font-size: 8px;
     height: 100%;
     display: block;
     margin: -10px 0;
-    border-top: 10px solid #00c000;
+    border-top: 10px solid #58d854;
     border-bottom: 10px solid #006600;
     }
      
@@ -145,6 +167,9 @@ font-size: 8px;
     .btn8bitE .wrapper-buttonE::after {
         background:#006600;
     }
+    .btn8bitE::before {
+        background: #58d854;
+    }
     .btn8bitE::before{ top: -5px; left: -5px; }
     .btn8bitE::after{ top: -5px; right: -5px; }
     .btn8bitE .wrapper-buttonE::before{ bottom: -5px; left: -5px; }
@@ -155,18 +180,19 @@ font-size: 8px;
 .btnDesencriptar {
     width: 100%;
     height: 100%;
-    background-color: #f8cd04;
+    background-color: #d82800;
+    color: #fcfcfc;
     border: none;
     cursor: pointer;
-    font-size: 10px;
+    font-size: 16px;
 }
 
 .btn8bitD {
-    background-color: #f8cd04;
-    width: 49%;
+    background-color: #d82800;
+    width: 47%;
     float: left;
-    border-left: 10px solid #f8cd04;
-    border-right: 10px solid #997f0d;
+    border-left: 10px solid #fc7460;
+    border-right: 10px solid #881400;
     position: relative;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -177,8 +203,8 @@ font-size: 8px;
 height: 30px;
 display: block;
 margin: -10px 0;
-border-top: 10px solid #f8cd04;
-border-bottom: 10px solid #997f0d;
+border-top: 10px solid #fc7460;
+border-bottom: 10px solid #881400;
 }
     
 .btn8bitD::before,
@@ -190,11 +216,14 @@ width: 10px;
 height: 10px;
 display: block;
 position: absolute;
-background: #f8cd04;
+background: #d82800;
 }
 
 .btn8bitD .wrapper-buttonD::after {
-    background: #997f0d;
+    background: #881400;
+}
+.btn8bitD::before {
+    background: #fc7460;
 }
 .btn8bitD::before{ top: -5px; left: -5px; }
 .btn8bitD::after{ top: -5px; right: -5px; }
@@ -216,7 +245,7 @@ background: #f8cd04;
 .content-viewT {
     width: 90%;
     height: 90%;
-    background-color: blue;
+    background-color: #2038ec;
     }
 
 .section_8bit {
@@ -272,18 +301,21 @@ background:#66331e;
 
 .wrap-textView {
     text-align: center;
+    padding: 0 12px;
+    box-sizing: border-box;
+    color: rgb(218, 208, 191);
     width: 100%;
     height: 50%;
 }
 
 .wrap-textView h2 {
     margin-top: 20%;
-    font-size: 20px;
+    font-size: 24px;
 }
 
 .wrap-textView p {
     margin-top: 10%;
-    font-size: 13px;
+    font-size: 16px;
 }
 
 .view-text img {
@@ -296,7 +328,7 @@ background:#66331e;
     display: none;
     width: 90%;
     height: 90%;
-    background-color: blue;
+    background-color: #2038ec;
     }
 
 .wrap-textA {
@@ -305,13 +337,27 @@ background:#66331e;
 }
 
 .wrap-textA textarea {
-    width: 92%;
+    width: 100%;
     height: 95%;
     padding: 10px;
-    background-color: blue;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #2038ec;
+    color: rgb(218, 208, 191);
     outline: none;
     border: none;
     resize: none;
+}
+
+/* borde de foco para quien navega con teclado (colores de la paleta) */
+.wrap-text textarea:focus-visible {
+    outline: 4px solid #f8cd04;
+    outline-offset: -4px;
+}
+
+.wrap-textA textarea:focus-visible {
+    outline: 4px solid #f8cd04;
+    outline-offset: -4px;
 }
 
 .wrap-btnCopy {
@@ -324,6 +370,11 @@ background:#66331e;
 }
 
 .wrap-btnCopy button { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
     width: 100%;
     height: 100%;
     background-color: #cc9f49;
@@ -336,7 +387,7 @@ background:#66331e;
     width: 80%;
     height: 40%;
     float: left;
-    border-left: 10px solid #cc9f49;
+    border-left: 10px solid #ecd08c;
     border-right: 10px solid #755924;
     position: relative;
     -webkit-box-sizing: border-box;
@@ -348,7 +399,7 @@ background:#66331e;
 display: block;
 height: 100%;
 margin: -10px -1px;
-border-top: 10px solid #cc9f49;
+border-top: 10px solid #ecd08c;
 border-bottom: 10px solid #755924;
 }
         
@@ -367,6 +418,9 @@ background: #cc9f49;
 .btn8bit-copy .wrap-btncopy::after {
     background: #755924;
 }
+.btn8bit-copy::before {
+    background: #ecd08c;
+}
 .btn8bit-copy::before{ top: -5px; left: -5px; }
 .btn8bit-copy::after{ top: -5px; right: -5px; }
 .btn8bit-copy .wrap-btncopy::before{ bottom: -5px; left: -5px; }
@@ -384,19 +438,17 @@ footer {
     align-items: center;
     width: 100%;
     height: 5%;
-    background-color: #db7437;
-    font-size: 12px;
+    background-color: #881400;
+    color: rgb(218, 208, 191);
+    font-size: 16px;
 }
 
 footer a {
     margin-left: 10px;
     font-size: 20px;
-    color: black;
+    color: rgb(218, 208, 191);
 }
 
-.fa-linkedin {
-   color: #0a67c3; 
-}
 
 /*************************************/
 
@@ -446,6 +498,7 @@ footer a {
 
 .btn-alert {
     padding: 5px;
+    font-size: 16px;
     border: solid 2px black;
     cursor: pointer;
 }
@@ -496,6 +549,110 @@ background: #241c01;
 
 /*************************************/
 
+/*********** ANIMACION DE BOTONES ***********/
+
+/* área clickeable: el ::after del botón cubre también el marco pixelado
+   (se posiciona respecto al div exterior, que es position: relative) */
+.btnEncriptar::after,
+.btnDesencriptar::after,
+.btnCopiar::after {
+    content: '';
+    position: absolute;
+    top: -10px; bottom: -10px;
+    left: -10px; right: -10px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+/* todo el botón (marco incluido) se ilumina al pasar el mouse
+   y se hunde al apretarlo */
+.btn8bitE,
+.btn8bitD,
+.btn8bit-copy {
+    transition: transform 0.05s, filter 0.1s;
+}
+
+.btn8bitE:hover,
+.btn8bitD:hover,
+.btn8bit-copy:hover {
+    filter: brightness(1.1);
+}
+
+.btn8bitE:active,
+.btn8bitD:active,
+.btn8bit-copy:active {
+    transform: translateY(4px);
+    filter: brightness(0.85);
+}
+
+/* al apretar se invierte el relieve: sombra arriba/izquierda y brillo abajo/derecha */
+.btn8bitE:active {
+    border-left-color: #006600;
+    border-right-color: #58d854;
+}
+.btn8bitE:active .wrapper-buttonE {
+    border-top-color: #006600;
+    border-bottom-color: #58d854;
+}
+.btn8bitE:active::before { background: #006600; }
+.btn8bitE:active .wrapper-buttonE::after { background: #58d854; }
+
+.btn8bitD:active {
+    border-left-color: #881400;
+    border-right-color: #fc7460;
+}
+.btn8bitD:active .wrapper-buttonD {
+    border-top-color: #881400;
+    border-bottom-color: #fc7460;
+}
+.btn8bitD:active::before { background: #881400; }
+.btn8bitD:active .wrapper-buttonD::after { background: #fc7460; }
+
+.btn8bit-copy:active {
+    border-left-color: #755924;
+    border-right-color: #ecd08c;
+}
+.btn8bit-copy:active .wrap-btncopy {
+    border-top-color: #755924;
+    border-bottom-color: #ecd08c;
+}
+.btn8bit-copy:active::before { background: #755924; }
+.btn8bit-copy:active .wrap-btncopy::after { background: #ecd08c; }
+
+
+.btn-alert {
+    transition: transform 0.05s;
+}
+
+.btn-alert:active {
+    transform: translateY(2px);
+}
+
+.btn-Borrar img {
+    transition: transform 0.1s;
+}
+
+.btn-Borrar:hover img {
+    transform: scale(1.1);
+}
+
+.btn-Borrar:active img {
+    transform: scale(0.9);
+}
+
+/* sin animaciones si el usuario lo pidió en su sistema */
+@media (prefers-reduced-motion: reduce) {
+    .btn8bitE,
+    .btn8bitD,
+    .btn8bit-copy,
+    .btn-alert,
+    .btn-Borrar img {
+        transition: none;
+    }
+}
+
+/*************************************/
+
 /*********** ALERT COPY AND NO TEXT***********/
 
 /* alert copy */
@@ -514,52 +671,63 @@ background: #241c01;
 .alert-copy p {
     color: black;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 16px;
     text-shadow: white 3px 1px;
 }
 
-/* alert no text */
-
+/* alert no text: caja de diálogo estilo Zelda NES (negro, letras blancas,
+   marco blanco con esquinas pixeladas). Va dentro de .wrap-text, que es
+   position: relative, así queda centrada sobre el campo de entrada */
 .alert-text {
     display: none;
-    background-color: #f24337;
     position: absolute;
-    top: 40%; left: 2%;
-    width: 250px;
-    height: 36px;
-    float: left;
-    border-left: 10px solid #f24337;
-    border-right: 10px solid #f24337;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    background-color: #000000;
+    color: #fcfcfc;
+    /* ancho según el texto, pero sin salirse del campo en pantallas chicas */
+    width: max-content;
+    max-width: calc(100% - 40px);
+    /* marco blanco de 4px con las esquinas recortadas + sombra pixelada */
+    box-shadow:
+        0 -4px 0 0 #fcfcfc,
+        0 4px 0 0 #fcfcfc,
+        -4px 0 0 0 #fcfcfc,
+        4px 0 0 0 #fcfcfc,
+        8px 8px 0 0 rgba(0, 0, 0, 0.4);
 }
-        
-.alert-text .wrapper-alertT{
-        background-color: #f24337;
-    display: block;
-    color: #ffffff;
-    padding: 10px;
-    margin: -10px 0;
-    border-top: 10px solid #f24337;
-    border-bottom: 10px solid #f24337;
+
+.alert-text .wrapper-alertT {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 24px;
+    font-size: 16px;
+    line-height: 1.5;
 }
-        
-.alert-text::before,
-.alert-text::after,
-.alert-text .wrapper-alertT::before,
-.alert-text .wrapper-alertT::after {
-    content: '';
-    width: 10px;
-    height: 10px;
-    display: block;
-    position: absolute;
-    background: #f24337;
+
+.alert-text .wrapper-alertT i {
+    color: #f8b800;
 }
-.alert-text::before{ top: -5px; left: -5px; }
-.alert-text::after{ top: -5px; right: -5px; }
-.alert-text .wrapper-alertT::before{ bottom: -5px; left: -5px; }
-.alert-text .wrapper-alertT::after{ bottom: -5px; right: -5px; }
+
+/* desvanecido de las alertas temporales */
+.alert-copy,
+.alert-text {
+    transition: opacity 0.2s;
+}
+
+.alert-copy.desvanecer,
+.alert-text.desvanecer {
+    opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .alert-copy,
+    .alert-text {
+        transition: none;
+    }
+}
     
 /*************************************/
 
@@ -598,11 +766,6 @@ background: #241c01;
         align-items: center;
         align-items: stretch;
       }
-
-    body {
-        background-image: none;
-        background-color: #4d924b;
-    }
 
     /* input section */
     .input-section {
@@ -645,6 +808,20 @@ background: #241c01;
     margin: -9px -1px;
     }
 
+    /* en pantallas chicas el panel es bajo y el botón copiar (40% del 20%)
+       quedaba de 15px: altura fija como los otros botones */
+    .wrap-textA {
+    height: calc(100% - 60px);
+    }
+
+    .wrap-btnCopy {
+    height: 60px;
+    }
+
+    .btn8bit-copy {
+    height: 30px;
+    }
+
     footer a {
     margin-left: 0px;
     }
@@ -665,10 +842,6 @@ background: #241c01;
         display: none;
     }
 
-        /* alert no text */
-    .alert-text .wrapper-alertT {
-        margin: -12px -1px;
-    }
     
     /* button delete text */
     .btn-Borrar{
@@ -697,7 +870,7 @@ background: #241c01;
     }
 
     .wrap-text {
-    height: 60%;
+    height: calc(60% - 20px);
     }
 
     .button-wrap {
@@ -748,18 +921,14 @@ background: #241c01;
     margin: -9px -1px;
     }
 
-    /* alert no text */
-    .alert-text {
-        top: 25%; left: 2%;
-    }
-
-    .alert-text .wrapper-alertT {
-        margin: -9px -1px;
-    }
 
     /* button delete text */
     .btn-Borrar {
         left: 90%;
+    }
+
+    footer {
+        font-size: 8px;
     }
              
 }
